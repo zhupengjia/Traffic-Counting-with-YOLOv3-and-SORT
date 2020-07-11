@@ -20,9 +20,9 @@ from keras.utils import multi_gpu_model
 
 class YOLO(object):
     _defaults = {
-        "model_path": '/model_data/yourweight.h5', #Put your weight name here
-        "anchors_path": '/model_data/yolo_anchor.txt',
-        "classes_path": '/model_data/coco_classes.txt',
+        "model_path": 'data/model_data/yolo.h5', #Put your weight name here
+        "anchors_path": 'data/model_data/yolo_anchors.txt',
+        "classes_path": 'data/model_data/coco_classes.txt',
         "score" : 0.4,
         "iou" : 0.5,
         "model_image_size" : (608, 608),
@@ -128,8 +128,8 @@ class YOLO(object):
 
         print('Found {} boxes for {}'.format(len(out_boxes), 'img'))
 
-        font = ImageFont.truetype(font='/font/FiraMono-Medium.otf',
-                    size=np.floor(3e-2 * image.size[1] + 0.5).astype('int32'))
+        font = ImageFont.truetype(font='font/FiraMono-Medium.otf',
+                    size=np.floor(2e-2 * image.size[1] + 0.5).astype('int32'))
         
         confidences = []
         return_boxs = []
